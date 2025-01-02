@@ -55,15 +55,13 @@ function Header() {
 }
 function Pizza({ name, ingredients, price, photoName, soldOut }) {
   return (
-    <li className="pizza">
+    <li className={`pizza ${soldOut ? "sold-out" : ""}`}>
       <img src={photoName} alt="unable to render" />
       <div>
         <h3>{name}</h3>
         <p>{ingredients}</p>
-        <span>{price}$</span>
+        <span>{soldOut ? "Sold Out" : price + "$"}</span>
       </div>
-
-      <p>{soldOut}</p>
     </li>
   );
 }
